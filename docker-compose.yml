@@ -1,0 +1,7 @@
+services:
+  website:
+    image: flyzin.dev:v0.1.0
+    container_name: flyzin.dev
+    restart: unless-stopped
+    ports:
+      - 3000:80
