@@ -1,7 +1,17 @@
 services:
   website:
-    image: flyzin.dev:v0.1.0
-    container_name: flyzin.dev
-    restart: unless-stopped
+    image: nginx:alpine
+    container_name: website
+    command: ["nginx", "-g", "daemon off;"]
+    volumes:
+      - ./src/public:/usr/share/nginx/html:ro
     ports:
       - 3000:80
+    restart: unless-stopped
+
+  cloudflared:
+    image: cloudflare/cloudflared
+    container_name: cloudflared
+    command: tunnel run --token $CLOUDFLARED_TOKEN
+    env_file: .env
+    restart: unless-stopped
