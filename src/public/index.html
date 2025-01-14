@@ -13,21 +13,42 @@
         align-items: center;
         flex-direction: column;
         height: 100vh;
-        font-family: "Helvetica", sans-serif;
+        font-family: "Times New Roman", serif;
         background-color: #ffffff;
+        color: #000000;
         text-align: center;
+        transition:
+          background-color 0.3s,
+          color 0.3s;
       }
 
       h1 {
         font-size: 3rem;
-        color: #000000;
         margin: 0;
       }
 
-      p {
+      .links {
+        margin-top: 10px;
+      }
+
+      .links a {
         font-size: 1.2rem;
         color: #555555;
-        margin: 10px 0 0;
+        text-decoration: none;
+        margin: 0 10px;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        transition: color 0.3s ease;
+      }
+
+      .links a:hover {
+        color: #000000;
+      }
+
+      .links img {
+        width: 20px;
+        height: 20px;
       }
 
       @media (max-width: 600px) {
@@ -35,14 +56,56 @@
           font-size: 2rem;
         }
 
-        p {
+        .links a {
           font-size: 1rem;
+        }
+
+        .links img {
+          width: 16px;
+          height: 16px;
         }
       }
     </style>
   </head>
   <body>
     <h1>flyzin.dev</h1>
-    <p>"coisas aleatorias que eu fiz sem motivo nenhum."</p>
+    <div class="links">
+      <a href="https://github.com/flyingluscas" target="_blank">
+        <img
+          src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/github.svg"
+          alt="GitHub"
+        />
+        GitHub
+      </a>
+      <a href="https://linkedin.com/in/flyingluscas" target="_blank">
+        <img
+          src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/linkedin.svg"
+          alt="LinkedIn"
+        />
+        LinkedIn
+      </a>
+      <a href="https://instagram.com/flyingluscas" target="_blank">
+        <img
+          src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/instagram.svg"
+          alt="Instagram"
+        />
+        Instagram
+      </a>
+    </div>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-NK020SHGWN"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-NK020SHGWN");
+    </script>
   </body>
 </html>
